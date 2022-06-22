@@ -10,7 +10,7 @@ export default () => {
   return (
     <>
       <Canvas camera={{ fov: 20, position: [0, 0, 20] }}>
-        <color attach='background' args={['#171720']} />
+        <color attach='background' args={['#d9cfde']} />
         <Physics gravity={[0, 0, 0]} allowSleep={false}>
           <BigBalls />
           <BigBalls />
@@ -37,8 +37,12 @@ export default () => {
           <SmallBalls />
         </Physics>
         {/* Begin Lights */}
-        <directionalLight position={[0, 5, -4]} intensity={1} />
-        <directionalLight position={[0, -15, -0]} intensity={1} color='white' />
+        <directionalLight position={[0, 5, -4]} intensity={0.5} />
+        <directionalLight
+          position={[0, -15, -0]}
+          intensity={0.5}
+          color='white'
+        />
         <Environment preset='dawn' />
         {/* End Lights */}
         <EffectComposer multisampling={0}>

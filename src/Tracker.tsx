@@ -6,7 +6,7 @@ import type { Mesh } from 'three';
 
 const Tracker = forwardRef<Mesh, SphereProps>((props, fwdRef) => {
   const [ref, { position }] = useSphere(
-    () => ({ args: [0.5], type: 'Dynamic', ...props }),
+    () => ({ args: [0], type: 'Kinematic', ...props }),
     fwdRef
   );
   useFrame(({ mouse: { x, y }, viewport: { height, width } }) =>
@@ -15,7 +15,7 @@ const Tracker = forwardRef<Mesh, SphereProps>((props, fwdRef) => {
   return (
     <mesh ref={ref}>
       <sphereBufferGeometry args={[0.5, 16, 16]} />
-      <meshPhysicalMaterial transparent={true} opacity={0} />
+      <meshBasicMaterial color={'blue'} />
     </mesh>
   );
 });
